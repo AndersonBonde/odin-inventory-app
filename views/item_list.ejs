@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/sidebar-nav.ejs') %>
+      <main>
+        <h1><%= data.title %></h1>
+        <% if (data.item_list.length) { %>
+          <ul>
+            <% data.item_list.forEach((item) => { %>
+              <li>
+                <a href=<%= item.url %>><%= item.name %></a>
+                <ul style="list-style: none;">
+                  <li><%= item.description %></li>
+                  <li>Price: $ <%= item.price %></li>
+                  <li>In Stock: 
+                    <span style="color: <%= item.numberInStock > 18 ? 'green' : item.numberInStock > 4 ? 'gold' : 'red' %>; font-weight: bold;">
+                      <%= item.numberInStock %>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p>There are no items.</p>
+        <% } %>
+      </main>
+    </div>
+  </body>
+</html>
