@@ -1,16 +1,34 @@
 const Item = require('../models/item');
+const Category = require('../models/category');
 const asyncHandler = require('express-async-handler');
 
 exports.index = asyncHandler(async (req, res, next) => {
+  // Get details of items and categories.
+  const [
+    numItems,
+    numCategories
+  ] = await Promise.all([
+    Item.countDocuments({}).exec(),
+    Category.countDocuments({}).exec()
+  ]);
+
   const data = {
     title: 'Home Page',
-  }
+    item_count: numItems,
+    category_count: numCategories,
+  };
   res.render('index', { data });
 });
 
 // Display list of all items.
 exports.item_list = asyncHandler(async (req, res, next) => {
-  res.send('TODO: Item list');
+  const allItems = await Item.find({}).sort({ name: 1 }).populate('category').exec();
+
+  const data = {
+    title: 'Item List',
+    item_list: allItems,
+  };
+  res.render('item_list', { data });
 });
 
 // Display detail page for a specific item.

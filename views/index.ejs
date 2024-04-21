@@ -9,7 +9,12 @@
       <%- include('partials/sidebar-nav.ejs') %>
       <main>
         <h1><%= data.title %></h1>
-        <p>Welcome to <%= data.title %></p>
+        <p>Welcome to your <em>Inventory</em>.</p>
+        <p>The inventory has the following record counts:</p>
+        <ul>
+          <li><strong>Categories: </strong><%= data.category_count %></li>
+          <li><strong>Items: </strong><%= data.item_count %></li>
+        </ul>        
       </main>
     </div>
   </body>

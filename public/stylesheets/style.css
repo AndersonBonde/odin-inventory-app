@@ -58,3 +58,15 @@ main {
   flex: 1;
   padding: 32px;
 }
+
+main h1 {
+  margin-block: 1rem;
+}
+
+main p {
+  margin-block: 4px;
+}
+
+main ul {
+  padding: 1rem 2rem;
+}
