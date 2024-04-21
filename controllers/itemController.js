@@ -2,7 +2,10 @@ const Item = require('../models/item');
 const asyncHandler = require('express-async-handler');
 
 exports.index = asyncHandler(async (req, res, next) => {
-  res.send('TODO: Site Home Page');
+  const data = {
+    title: 'Home Page',
+  }
+  res.render('index', { data });
 });
 
 // Display list of all items.

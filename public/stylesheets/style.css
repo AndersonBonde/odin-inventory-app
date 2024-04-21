@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Roboto;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,5 +10,51 @@
 }
 
 body {
-  padding: 50px;
+  font-family: Roboto, sans-serif;
+}
+
+/*
+  --- Sidebar navigation
+*/
+
+.container {
+  display: flex;
+}
+
+.sidebar-nav {
+  padding: 16px;
+  flex: 0 0 220px;
+  height: 100vh;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-block: .25rem;
+}
+
+.sidebar-nav a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  padding: 2px;
+}
+
+.sidebar-nav a:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+hr {
+  margin-block: 1rem;
+}
+
+/*
+  --- Main
+*/
+
+main {
+  flex: 1;
+  padding: 32px;
 }
