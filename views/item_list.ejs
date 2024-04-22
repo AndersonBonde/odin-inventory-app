@@ -17,11 +17,7 @@
                 <ul style="list-style: none;">
                   <li><%= item.description %></li>
                   <li>Price: $ <%= item.price %></li>
-                  <li>In Stock: 
-                    <span style="color: <%= item.numberInStock > 18 ? 'green' : item.numberInStock > 4 ? 'gold' : 'red' %>; font-weight: bold;">
-                      <%= item.numberInStock %>
-                    </span>
-                  </li>
+                  <li>In Stock: <%= item.numberInStock %></li>
                 </ul>
               </li>
             <% }) %>

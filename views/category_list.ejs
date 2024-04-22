@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/colapseCategoryButton.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/sidebar-nav.ejs') %>
+      <main>
+        <h1>
+          <%= data.title %>
+        </h1>
+        <% if (data.category_list.length) { %>
+          <ul>
+            <% data.category_list.forEach((category) => { %>
+              <li>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <button class="colapse-category-button">-</button>
+                  <a href=<%= category.url %>>
+                    <%= category.name %>
+                  </a>
+                </div>
+                <ul>
+                  <% data.item_list.forEach((item) => { %>
+                    <% if (item.category.name == category.name) { %>
+                      <li>
+                        <a href=<%= item.url %>>
+                          <%= item.name %>
+                        </a>
+                      </li>
+                    <% } %>
+                  <% }) %>
+                </ul>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p>There are no categories.</p>
+        <% } %>
+      </main>
+    </div>
+  </body>
+</html>

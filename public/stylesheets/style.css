@@ -70,3 +70,15 @@ main p {
 main ul {
   padding: 1rem 2rem;
 }
+
+main a {
+  text-decoration: none;
+}
+
+.colapse-category-button {
+  width: 1.35rem;
+}
+
+.colapse-category-button:hover {
+  background-color: rgb(204, 204, 204);
+}

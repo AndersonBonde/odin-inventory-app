@@ -1,9 +1,20 @@
 const Category = require('../models/category');
+const Item = require('../models/item');
 const asyncHandler = require('express-async-handler');
 
 // Display list of all Categories.
 exports.category_list = asyncHandler(async (req, res, next) => {
-  res.send('TODO: Category list');
+  const [allItems, allCategories] = await Promise.all([
+    Item.find().populate('category').exec(),
+    Category.find().sort({ name: 1 }).exec()
+  ]);
+
+  const data = {
+    title: 'Category List',
+    item_list: allItems,
+    category_list: allCategories,
+  };
+  res.render('category_list', { data });
 });
 
 // Display detail page for a specific Category.
