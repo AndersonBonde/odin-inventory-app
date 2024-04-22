@@ -1,6 +1,6 @@
 const allButtons = document.querySelectorAll('button');
 
-allButtons.forEach((button, idx) => {
+allButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const itemList = button.parentElement.parentElement.querySelector('ul');
 

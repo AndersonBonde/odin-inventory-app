@@ -75,10 +75,10 @@ main a {
   text-decoration: none;
 }
 
-.colapse-category-button {
+.collapse-button {
   width: 1.35rem;
 }
 
-.colapse-category-button:hover {
+.collapses-button:hover {
   background-color: rgb(204, 204, 204);
 }

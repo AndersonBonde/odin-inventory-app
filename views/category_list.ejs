@@ -3,7 +3,7 @@
   <head>
     <title><%= data.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="/javascripts/colapseCategoryButton.js" defer></script>
+    <script src="/javascripts/collapseButton.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -17,7 +17,7 @@
             <% data.category_list.forEach((category) => { %>
               <li>
                 <div style="display: flex; gap: 8px; align-items: center;">
-                  <button class="colapse-category-button">-</button>
+                  <button class="collapse-button">-</button>
                   <a href=<%= category.url %>>
                     <%= category.name %>
                   </a>

@@ -3,6 +3,7 @@
   <head>
     <title><%= data.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/collapseButton.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -13,7 +14,10 @@
           <ul>
             <% data.item_list.forEach((item) => { %>
               <li>
-                <a href=<%= item.url %>><%= item.name %></a>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <button class="collapse-button">-</button>
+                  <a href=<%= item.url %>><%= item.name %></a>
+                </div>
                 <ul style="list-style: none;">
                   <li><%= item.description %></li>
                   <li>Price: $ <%= item.price %></li>
