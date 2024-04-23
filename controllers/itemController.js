@@ -33,7 +33,21 @@ exports.item_list = asyncHandler(async (req, res, next) => {
 
 // Display detail page for a specific item.
 exports.item_detail = asyncHandler(async (req, res, next) => {
-  res.send(`TODO: Item detail: ${req.params.id}`);
+  // Get detail from item an associated category.
+  const item = await Item.findById(req.params.id).populate('category').exec();
+
+  if (item === null) {
+    // Item not found.
+    const err = new Error('Item not found');
+    err.status = 404;
+    return next(err);
+  }
+
+  const data = {
+    item,
+    title: 'Item Detail',
+  };
+  res.render('item_detail', { data });
 });
 
 // Display item create form on GET.

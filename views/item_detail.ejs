@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/collapseButton.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/sidebar-nav.ejs') %>
+      <main>
+        <h1><%= data.title %></h1>
+        <h2><%= data.item.name %></h2>
+        <ul style="list-style: none;">
+          <li>Category: <a href=<%= data.item.category.url %>><%= data.item.category.name %></a></li>
+          <li><%= data.item.description %></li>
+          <li>Price: $ <%= data.item.price %></li>
+          <li>In Stock: <%= data.item.numberInStock %></li>
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>
