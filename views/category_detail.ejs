@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/collapseButton.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/sidebar-nav.ejs') %>
+      <main>
+        <h1><%= data.title %></h1>
+        <h2><%= data.category.name %></h2>
+        <p><%= data.category.description %></p>
+        <% if (data.category_items) { %>
+          <ul>
+            <% data.category_items.forEach((item) => { %>
+              <li><a href=<%= item.url %>><%= item.name %></a></li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p>This category has no items.</p>
+        <% } %>
+      </main>
+    </div>
+  </body>
+</html>
