@@ -12,14 +12,16 @@
         <h1><%= data.title %></h1>
         <h2><%= data.category.name %></h2>
         <p><%= data.category.description %></p>
-        <% if (data.category_items) { %>
+        <% if (data.category_items.length) { %>
           <ul>
             <% data.category_items.forEach((item) => { %>
               <li><a href=<%= item.url %>><%= item.name %></a></li>
             <% }) %>
           </ul>
         <% } else { %>
-          <p>This category has no items.</p>
+          <ul>
+            <li>This category has no items.</li>
+          </ul>
         <% } %>
       </main>
     </div>
