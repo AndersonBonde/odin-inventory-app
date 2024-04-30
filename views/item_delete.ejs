@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= data.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/collapseButton.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/sidebar-nav.ejs') %>
+      <main>
+        <h1><%= data.title %></h1>
+        <h2><%= data.item.name %></h2>
+
+        <p>Do you really want to delete this Item?</p>
+
+        <form action="" method="post">
+          <div class="form-group">
+            <input type="hidden" id="itemid" name="itemid" class="form-control" value=<%= data.item._id %>>
+          </div>
+
+          <a class="btn" href=<%= `/inventory/item/${data.item._id}` %>>Cancel</a>
+          <button class="btn" type="submit">Delete</button>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

@@ -17,6 +17,14 @@
           <li>Price: $ <%= data.item.price %></li>
           <li>In Stock: <%= data.item.numberInStock %></li>
         </ul>
+
+        <hr>
+        <p>
+          <a href=<%= `${data.item.url}/delete` %>>Delete Item</a>
+        </p>
+        <p>
+          <a href=<%= `${data.item.url}/update` %>>Update Item</a>
+        </p>
       </main>
     </div>
   </body>
