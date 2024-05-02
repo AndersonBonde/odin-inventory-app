@@ -23,6 +23,14 @@
             <li>This category has no items.</li>
           </ul>
         <% } %>
+
+        <hr>
+        <p>
+          <a href="<%= `${data.category.url}/delete` %>">Delete Category</a>
+        </p>
+        <p>
+          <a href="<%= `${data.category.url}/update` %>">Update Category</a>
+        </p>
       </main>
     </div>
   </body>

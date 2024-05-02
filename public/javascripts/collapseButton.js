@@ -1,4 +1,4 @@
-const allButtons = document.querySelectorAll('button');
+const allButtons = document.querySelectorAll('.collapse-button');
 
 allButtons.forEach((button) => {
   button.addEventListener('click', () => {

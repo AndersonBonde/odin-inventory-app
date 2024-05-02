@@ -18,7 +18,7 @@
           </div>
           <div class="form-group">
             <label for="description">Description:</label>
-            <textarea name="description" id="description" class="form-control" cols="30" rows="5" required value=<%= undefined === data.category ? `` : data.category.description %>></textarea>
+            <textarea name="description" id="description" class="form-control" cols="30" rows="5" required><%= undefined === data.category ? `` : data.category.description %></textarea>
           </div>
           <button class="btn" type="submit">Submit</button>
         </form>
