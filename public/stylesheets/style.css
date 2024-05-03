@@ -113,3 +113,12 @@ main a {
   cursor: pointer;
   background-color: rgb(16, 16, 185);
 }
+
+/*
+  --- Misc
+*/
+
+.disabled {
+  color: lightgray;
+  pointer-events: none;
+}

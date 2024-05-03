@@ -4,6 +4,7 @@
     <title><%= data.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/javascripts/collapseButton.js" defer></script>
+    <script src="/javascripts/askForAdminPassword.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -19,11 +20,13 @@
         </ul>
 
         <hr>
+
+        <a class="admin_password" href="">Admin Password &#128273;</a>
         <p>
-          <a href=<%= `${data.item.url}/delete` %>>Delete Item</a>
+          <a class="admin_link"  href=<%= `${data.item.url}/delete` %>>Delete Item</a>
         </p>
         <p>
-          <a href=<%= `${data.item.url}/update` %>>Update Item</a>
+          <a class="admin_link"  href=<%= `${data.item.url}/update` %>>Update Item</a>
         </p>
       </main>
     </div>
